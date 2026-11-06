@@ -23,7 +23,6 @@ css/styles.css                   Estilos personalizados (tokens, modo oscuro, re
 assets/img/                      Imágenes del diseño
 contenido/tema-N/                Recursos de cada tema
   documento.pdf
-  podcast.mp3
   actividad/index.html           Paquete multimedia (se muestra en un iframe)
 js/
   config/course-config.js        Textos, duraciones y rutas de los 7 temas (fuente única)
@@ -45,9 +44,10 @@ Todo el código se expone bajo un único objeto global, `window.MiRed`, para no 
 
 - Los temas 1–3 usan los textos de la imagen de referencia; los temas 4–7 tienen textos de
   ejemplo. Edita solo `js/config/course-config.js`.
-- Los PDF, MP3 y actividades incluidos son de ejemplo: reemplázalos con los mismos nombres.
-- Para el video, completa `videoUrl` del tema con un enlace de YouTube o Vimeo. Mientras esté
-  vacío, el visor muestra "recurso aún no disponible".
+- Los PDF y actividades incluidos son de ejemplo: reemplázalos con los mismos nombres.
+- Para el video y el pódcast, completa `videoUrl` y `podcastUrl` del tema con un enlace de Vimeo
+  (el pódcast se publica como video; el seguimiento solo funciona con Vimeo). Mientras estén
+  vacíos, el visor muestra "recurso aún no disponible".
 
 ## Flujo del progreso
 

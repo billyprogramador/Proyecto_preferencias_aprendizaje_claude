@@ -1,5 +1,5 @@
 /**
- * Visor de recursos de un tema (video, documento, pódcast y actividad interactiva).
+ * Visor de recursos de un tema (video, documento, pódcast y multimedia interactivo).
  * Usa el modal de Bootstrap. El contenido de cada formato se carga solo cuando
  * se selecciona y se descarta al cerrar, para no reproducir medios en segundo plano.
  */
@@ -59,6 +59,12 @@
   }
 
   const VIDEO_IFRAME_ID = 'video-tema';
+  const PODCAST_IFRAME_ID = 'podcast-tema';
+  /** Recursos de Vimeo con seguimiento: clave del recurso -> id de su iframe. */
+  const VIMEO_TRACKED_IFRAMES = Object.freeze({
+    video: VIDEO_IFRAME_ID,
+    podcast: PODCAST_IFRAME_ID,
+  });
   const PDF_IFRAME_ID = 'pdf-tema';
   const PDF_VIEWER_PATH = 'lib/visor/web/viewer.html';
 
@@ -160,26 +166,25 @@
       ];
     },
 
+    // El pódcast se publica como video de Vimeo y comparte el seguimiento del video.
     podcast(resource, type, topic) {
-      if (!resource.src) return [createEmptyState(type.label)];
-      const audio = createElement('audio', {
-        class: 'w-100',
-        'aria-label': `${type.label}: ${topic.title}`,
-        controls: '',
-        preload: 'metadata',
-        src: resource.src,
-      });
-      audio.append(document.createTextNode('Tu navegador no puede reproducir este audio.'));
-      const wrapper = createElement('div', { class: 'resource-audio' });
-      wrapper.append(audio);
-      return [wrapper];
+      const embedUrl = toVideoEmbedUrl(resource.url);
+      if (!embedUrl) return [createEmptyState(type.label)];
+      return [
+        createFrame(
+          embedUrl,
+          `${type.label}: ${topic.title}`,
+          'ratio ratio-16x9',
+          PODCAST_IFRAME_ID
+        ),
+      ];
     },
 
     multimedia(resource, type, topic) {
       if (!resource.src) return [createEmptyState(type.label)];
       return [
         createFrame(resource.src, `${type.label}: ${topic.title}`, 'ratio ratio-16x9'),
-        createOpenLink(resource.src, 'Abrir la actividad en una pestaña nueva'),
+        createOpenLink(resource.src, 'Abrir el multimedia en una pestaña nueva'),
       ];
     },
   });
@@ -214,12 +219,14 @@
     elements.panel.replaceChildren(...renderers[resourceKey](resource, type, activeTopic));
 
     // El seguimiento solo aplica a videos de Vimeo (el SDK no soporta YouTube).
-    if (resourceKey === 'video') {
-      const iframe = document.getElementById(VIDEO_IFRAME_ID);
+    const trackedIframeId = VIMEO_TRACKED_IFRAMES[resourceKey];
+    if (trackedIframeId) {
+      const iframe = document.getElementById(trackedIframeId);
       if (iframe && new URL(iframe.src).hostname === 'player.vimeo.com') {
-        seguimiento_reproductor_video(VIDEO_IFRAME_ID, {
+        seguimiento_reproductor_video(trackedIframeId, {
           topicId: activeTopic.id,
           idSesion: activeSessionId,
+          recurso: resourceKey, // 'video' | 'podcast': el avance se guarda por separado
         });
       }
     }

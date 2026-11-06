@@ -3,8 +3,9 @@
  *
  * - Para cambiar textos, duraciones o rutas de los recursos, edita solo este archivo.
  * - Los archivos de cada tema viven en /contenido/tema-N/.
- * - `video.url` admite enlaces de YouTube o Vimeo (watch, youtu.be o embed).
- *   Si se deja vacío, el visor muestra un aviso de "recurso pendiente".
+ * - `video.url` y `podcast.url` admiten enlaces de YouTube o Vimeo (watch, youtu.be o embed).
+ *   Si se dejan vacíos, el visor muestra un aviso de "recurso pendiente".
+ *   El seguimiento (play, pausa, etc.) solo funciona con enlaces de Vimeo.
  */
 (function (MiRed) {
   'use strict';
@@ -26,8 +27,17 @@
    * @param {number} topic.durationMinutes
    * @param {string} topic.icon   id del símbolo SVG definido en index.html
    * @param {string} [topic.videoUrl]
+   * @param {string} [topic.podcastUrl]  el pódcast se publica como video de Vimeo
    */
-  function defineTopic({ number, title, description, durationMinutes, icon, podcast, videoUrl = '' }) {
+  function defineTopic({
+    number,
+    title,
+    description,
+    durationMinutes,
+    icon,
+    videoUrl = '',
+    podcastUrl = '',
+  }) {
     const folder = `contenido/tema-${number}`;
     return Object.freeze({
       id: `tema-${number}`,
@@ -39,7 +49,7 @@
       resources: Object.freeze({
         video: Object.freeze({ url: videoUrl }),
         document: Object.freeze({ src: `${folder}/documento.pdf` }),
-        podcast: Object.freeze({ src: `${folder}/podcast.mp3` }),
+        podcast: Object.freeze({ url: podcastUrl }),
         multimedia: Object.freeze({ src: `${folder}/actividad/index.html` }),
       }),
     });
@@ -54,6 +64,7 @@
       durationMinutes: 20,
       icon: 'topic-shield',
       videoUrl: 'https://player.vimeo.com/video/1234190581?h=a9d9a65ef2&badge=0&autopause=0&player_id=0&app_id=58479',
+      podcastUrl: 'https://player.vimeo.com/video/1234190581?h=a9d9a65ef2&badge=0&autopause=0&player_id=0&app_id=58479',
     }),
     defineTopic({
       number: 2,

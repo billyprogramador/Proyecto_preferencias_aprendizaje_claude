@@ -2,6 +2,8 @@
  * Seguimiento del reproductor de video de Vimeo (Vimeo Player SDK).
  *
  * - seguimiento_reproductor_video(idIframe, contexto): inicia el seguimiento.
+ *   `contexto` se copia a cada evento: { topicId, idSesion, recurso }, donde
+ *   `recurso` ('video' | 'podcast') distingue el avance de cada pestaña.
  * - detener_seguimiento_video(): libera el reproductor y sus listeners.
  *
  * Cada acción relevante se emite como evento `seguimiento:video` en `window`

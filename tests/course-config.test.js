@@ -47,22 +47,24 @@ describe('course-config', () => {
 
   test('los archivos locales de cada tema existen', () => {
     topics.forEach((topic) => {
-      ['document', 'podcast', 'multimedia'].forEach((key) => {
+      ['document', 'multimedia'].forEach((key) => {
         const src = topic.resources[key].src;
         assert.ok(fs.existsSync(path.join(PROJECT_ROOT, src)), `No existe ${src}`);
       });
     });
   });
 
-  test('las URL de video configuradas son de YouTube o Vimeo', () => {
-    topics
-      .filter((topic) => topic.resources.video.url)
-      .forEach((topic) => {
+  test('las URL de video y pódcast configuradas son de YouTube o Vimeo', () => {
+    topics.forEach((topic) => {
+      ['video', 'podcast'].forEach((key) => {
+        const url = topic.resources[key].url;
+        if (!url) return;
         assert.ok(
-          resourceViewer.toVideoEmbedUrl(topic.resources.video.url),
-          `${topic.id}: URL de video no reconocida`
+          resourceViewer.toVideoEmbedUrl(url),
+          `${topic.id}: URL de ${key} no reconocida`
         );
       });
+    });
   });
 
   test('cada ícono usado existe en index.html', () => {
