@@ -67,8 +67,7 @@
 
   /** URL del visor PDF.js; el PDF debe ser del mismo origen que el visor. */
   function toPdfViewerUrl(pdfSrc) {
-    const absolutePdf = new URL(pdfSrc, document.baseURI).href;
-    return `${PDF_VIEWER_PATH}?file=${encodeURIComponent(absolutePdf)}`;
+    return `${PDF_VIEWER_PATH}?file=${pdfSrc}`;
   }
 
   /** Pide al visor que guarde el avance final de la sesión PDF en curso. */
