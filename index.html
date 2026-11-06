@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mi red de protección: aprende cómo te protege la seguridad social en cada etapa de la vida.">
+  <title>Mi red de protección | Derecho de la seguridad social</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Íconos SVG reutilizables (se referencian con <use href="#icon-...">) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none" aria-hidden="true">
+    <symbol id="icon-logo" viewBox="0 0 64 40">
+      <circle cx="32" cy="7" r="6" fill="currentColor"/>
+      <circle cx="18" cy="13" r="5" fill="currentColor"/>
+      <circle cx="46" cy="13" r="5" fill="currentColor"/>
+      <path d="M22 26c3-6 17-6 20 0l-4 5H26z" fill="currentColor"/>
+      <path d="M3 18c6 9 14 15 29 15s23-6 29-15c-2 12-13 21-29 21S5 30 3 18z" fill="#fff"/>
+    </symbol>
+    <symbol id="icon-text-increase" viewBox="0 0 24 24">
+      <path d="M3 19 8.5 5h1L15 19m-9.8-4.5h7.6M17 4v6m-3-3h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-text-decrease" viewBox="0 0 24 24">
+      <path d="M3 19 8.5 5h1L15 19m-9.8-4.5h7.6M14 7h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+      <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8m10.6 10.6 1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-video" viewBox="0 0 24 24">
+      <path d="M9 7.5v9l7.5-4.5z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-document" viewBox="0 0 24 24">
+      <path d="M7 3h7l4 4v14H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M9.5 11h6m-6 3h6m-6 3h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-podcast" viewBox="0 0 24 24">
+      <rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/>
+      <path d="M6 11a6 6 0 0 0 12 0M12 17v4m-3 0h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-multimedia" viewBox="0 0 24 24">
+      <path d="M4 8V4h4m8 0h4v4m0 8v4h-4M8 20H4v-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 9l6 6m0-6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24">
+      <path d="M7.5 10.5V8a4.5 4.5 0 0 1 9 0v2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="5" y="10.5" width="14" height="10.5" rx="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-save" viewBox="0 0 24 24">
+      <path d="M5 3h11l3 3v15H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M8 3v5h7V3M8 21v-6h8v6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="M5 12.5 10 17l9-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24">
+      <path d="M14 4h6v6m0-6-9 9M18 14v6H4V6h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Íconos de los temas -->
+    <symbol id="topic-shield" viewBox="0 0 64 64">
+      <path d="M32 6 52 13v16c0 14-9 24-20 29C21 53 12 43 12 29V13z" fill="#fff" stroke="#f26a1b" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="32" cy="26" r="5" fill="#123c57"/>
+      <circle cx="22" cy="30" r="4" fill="#123c57"/>
+      <circle cx="42" cy="30" r="4" fill="#123c57"/>
+      <path d="M24 44c0-6 4-10 8-10s8 4 8 10zM15 44c0-5 3-8 7-8 1 0 2 .2 3 .6-2 2-3 4.5-3 7.4zM49 44c0-5-3-8-7-8-1 0-2 .2-3 .6 2 2 3 4.5 3 7.4z" fill="#123c57"/>
+    </symbol>
+    <symbol id="topic-helmet" viewBox="0 0 64 64">
+      <path d="M14 36a18 17 0 0 1 36 0z" fill="#fff"/>
+      <path d="M27 20.5v-3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" fill="#fff"/>
+      <path d="M32 20v15" stroke="#5f8299" stroke-width="2.5"/>
+      <rect x="9" y="35" width="46" height="6" rx="3" fill="#fff"/>
+      <circle cx="32" cy="48" r="9" fill="#fff"/>
+      <path d="M30 42h4v4h4v4h-4v4h-4v-4h-4v-4h4z" fill="#123c57"/>
+    </symbol>
+    <symbol id="topic-elder" viewBox="0 0 64 64">
+      <circle cx="30" cy="16" r="7" fill="#fff"/>
+      <path d="M21 56V34c0-6 4-10 9-10s9 4 9 10v6h-5v16z" fill="#fff"/>
+      <path d="M44 34v24" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <path d="M39 34h5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="topic-family" viewBox="0 0 64 64">
+      <circle cx="22" cy="18" r="6" fill="#fff"/>
+      <circle cx="42" cy="18" r="6" fill="#fff"/>
+      <circle cx="32" cy="34" r="4.5" fill="#fff"/>
+      <path d="M12 52V34c0-5 4-8 10-8s10 3 10 8v-0c0-5 4-8 10-8s10 3 10 8v18z" fill="#fff" opacity=".9"/>
+      <path d="M26 52v-6c0-3 3-5 6-5s6 2 6 5v6z" fill="#123c57"/>
+    </symbol>
+    <symbol id="topic-briefcase" viewBox="0 0 64 64">
+      <path d="M24 20v-4a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v4" fill="none" stroke="#fff" stroke-width="4"/>
+      <rect x="10" y="20" width="44" height="30" rx="4" fill="#fff"/>
+      <path d="M10 33h44" stroke="#123c57" stroke-width="3"/>
+      <rect x="28" y="30" width="8" height="7" rx="1.5" fill="#f26a1b"/>
+    </symbol>
+    <symbol id="topic-health" viewBox="0 0 64 64">
+      <path d="M32 54S10 41 10 25a11 11 0 0 1 22-3 11 11 0 0 1 22 3c0 16-22 29-22 29z" fill="#fff"/>
+      <path d="M29 24h6v6h6v6h-6v6h-6v-6h-6v-6h6z" fill="#123c57"/>
+    </symbol>
+    <symbol id="topic-scale" viewBox="0 0 64 64">
+      <path d="M32 10v42M20 52h24M14 18h36" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+      <path d="M14 18 6 34h16zM50 18l-8 16h16z" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M6 34a8 5 0 0 0 16 0zM42 34a8 5 0 0 0 16 0z" fill="#fff"/>
+    </symbol>
+  </svg>
+
+  <a class="visually-hidden-focusable skip-link" href="#temas">Saltar a los temas</a>
+
+  <header class="site-header">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3 py-2">
+      <a class="brand d-flex align-items-center gap-3 text-decoration-none" href="#">
+        <svg class="brand__logo" aria-hidden="true"><use href="#icon-logo"/></svg>
+        <span>
+          <span class="brand__name d-block">Mi red de protección</span>
+          <span class="brand__subtitle d-block">Derecho de la seguridad social</span>
+        </span>
+      </a>
+      <div class="d-flex gap-2" role="group" aria-label="Preferencias de visualización">
+        <button type="button" class="btn-tool" data-action="font-increase" aria-label="Aumentar tamaño del texto" title="Aumentar texto">
+          <svg aria-hidden="true"><use href="#icon-text-increase"/></svg>
+        </button>
+        <button type="button" class="btn-tool" data-action="font-decrease" aria-label="Disminuir tamaño del texto" title="Disminuir texto">
+          <svg aria-hidden="true"><use href="#icon-text-decrease"/></svg>
+        </button>
+        <button type="button" class="btn-tool" data-action="theme-toggle" aria-pressed="false" aria-label="Modo oscuro" title="Modo oscuro">
+          <svg aria-hidden="true"><use href="#icon-moon" data-theme-icon/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__art" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <h1 id="hero-title" class="hero__title">Mi red de protección</h1>
+        <p class="hero__lead">Aprende cómo te protege la seguridad social en cada etapa de la vida.</p>
+
+        <div class="overall-progress">
+          <span id="overall-progress-label" class="overall-progress__label">Tu progreso general</span>
+          <div class="progress overall-progress__bar" role="progressbar"
+               aria-labelledby="overall-progress-label"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+               data-overall-progress-bar>
+            <div class="progress-bar" style="width: 0%" data-overall-progress-fill></div>
+          </div>
+          <output class="overall-progress__value" aria-live="polite" aria-atomic="true"><span class="visually-hidden">Progreso general del curso: </span><span data-overall-progress-value>0 %</span></output>
+        </div>
+      </div>
+    </section>
+
+    <section id="temas" class="topics" aria-label="Temas del curso" tabindex="-1">
+      <div class="container">
+        <ol class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 list-unstyled mb-0" data-topic-list></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3 py-3">
+      <p class="d-flex align-items-center gap-2 mb-0">
+        <svg class="icon" aria-hidden="true"><use href="#icon-save"/></svg>
+        Tu progreso se guarda automáticamente
+      </p>
+      <div class="d-flex align-items-center gap-4 site-footer__tools">
+        <button type="button" class="btn-link-tool" data-action="font-increase">
+          <svg class="icon" aria-hidden="true"><use href="#icon-text-increase"/></svg>
+          Aumentar texto
+        </button>
+        <button type="button" class="btn-link-tool" data-action="theme-toggle" aria-pressed="false">
+          <svg class="icon" aria-hidden="true"><use href="#icon-moon" data-theme-icon/></svg>
+          Modo oscuro
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Visor de recursos del tema -->
+  <div class="modal fade" id="resource-viewer" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="resource-viewer-title" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <p class="topic-card__eyebrow mb-1" data-viewer-eyebrow></p>
+            <h2 class="modal-title topic-card__title h4" id="resource-viewer-title" data-viewer-title>Recursos del tema</h2>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="nav nav-pills resource-tabs mb-3" role="tablist" aria-label="Formatos del tema" data-viewer-tabs></div>
+          <div class="resource-stage" role="tabpanel" id="resource-panel" data-viewer-panel tabindex="0"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plantillas de interfaz -->
+  <template id="topic-card-template">
+    <li class="col">
+      <article class="topic-card h-100">
+        <div class="topic-card__head">
+          <div class="topic-card__badge">
+            <svg class="topic-card__icon" aria-hidden="true"><use data-topic-icon/></svg>
+            <span class="topic-card__lock" aria-hidden="true"><svg><use href="#icon-lock"/></svg></span>
+          </div>
+          <div>
+            <p class="topic-card__eyebrow" data-topic-eyebrow></p>
+            <h2 class="topic-card__title" data-topic-title></h2>
+            <p class="topic-card__description" data-topic-description></p>
+          </div>
+        </div>
+
+        <ul class="resource-list list-unstyled" data-resource-list></ul>
+
+        <p class="topic-card__locked-note" data-locked-note>
+          <svg class="icon" aria-hidden="true"><use href="#icon-lock"/></svg>
+          <span data-locked-text></span>
+        </p>
+
+        <div class="topic-card__meta">
+          <span class="d-inline-flex align-items-center gap-2">
+            <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
+            <span data-topic-duration></span>
+          </span>
+          <span class="status-label" data-topic-status-label>
+            <svg class="icon status-label__icon" aria-hidden="true"><use href="#icon-check"/></svg>
+            <span data-topic-status></span>
+          </span>
+        </div>
+
+        <button type="button" class="btn btn-enter w-100" data-topic-enter>
+          Entrar <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+        </button>
+      </article>
+    </li>
+  </template>
+
+  <template id="resource-button-template">
+    <li>
+      <button type="button" class="resource-button" data-resource-button>
+        <span class="resource-button__icon"><svg aria-hidden="true"><use data-resource-icon/></svg></span>
+        <span class="resource-button__label" data-resource-label></span>
+      </button>
+    </li>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous" defer></script>
+
+  <!-- El orden importa: configuración → lógica pura → interfaz → integración → arranque -->
+  <script src="js/config/course-config.js" defer></script>
+  <script src="js/progress/progress-calculator.js" defer></script>
+  <script src="js/progress/topic-access.js" defer></script>
+  <script src="js/ui/progress-indicator.js" defer></script>
+  <script src="js/ui/topic-cards.js" defer></script>
+  <script src="js/ui/resource-viewer.js" defer></script>
+  <script src="js/ui/display-preferences.js" defer></script>
+  <script src="js/progress/course-progress.js" defer></script>
+  <script src="js/integration/tracking-adapter.js" defer></script>
+  <script src="js/seguimiento/player.js" defer></script>
+  <script src="js/seguimiento/api_vimeo.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

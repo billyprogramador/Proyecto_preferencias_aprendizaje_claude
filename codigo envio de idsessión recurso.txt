@@ -1,0 +1,49 @@
+
+window.addEventListener("message", function (event) {
+    if (event.origin !== window.location.origin) {
+        return;
+    }
+
+    if (event.data?.tipo !== "SOLICITAR_SESION_PDF") {
+        return;
+    }
+
+    const iframe = Array.from(
+        document.querySelectorAll("iframe")
+    ).find(function (elemento) {
+        return elemento.contentWindow === event.source;
+    });
+
+    if (!iframe) {
+        return;
+    }
+
+    const idSesion = crypto.randomUUID();
+
+    console.log("idSesion "+idSesion);
+
+    event.source.postMessage({
+        tipo: "RESPUESTA_SESION_PDF",
+        idSesion: idSesion
+    }, event.origin);
+});
+
+$(document).on('shown.bs.modal', '.modal', function () {
+    $(this).find('iframe').each(function () {
+        if (!this.contentWindow) return;
+
+        this.contentWindow.postMessage({
+            tipo: "SOLICITAR_SESION_PDF"
+        }, window.location.origin);
+    });
+});
+
+$(document).on('hide.bs.modal', '.modal', function () {
+    $(this).find('iframe').each(function () {
+        if (!this.contentWindow) return;
+
+        this.contentWindow.postMessage({
+            tipo: "FINALIZAR_SESION_PDF"
+        }, window.location.origin);
+    });
+});
