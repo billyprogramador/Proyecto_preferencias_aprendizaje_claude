@@ -15,7 +15,7 @@
     Object.freeze({ key: 'video', label: 'Video', icon: 'icon-video' }),
     Object.freeze({ key: 'document', label: 'Documento', icon: 'icon-document' }),
     Object.freeze({ key: 'podcast', label: 'Pódcast', icon: 'icon-podcast' }),
-    Object.freeze({ key: 'multimedia', label: 'Actividad interactiva', icon: 'icon-multimedia' }),
+    Object.freeze({ key: 'multimedia', label: 'Recurso interactivo', icon: 'icon-multimedia' }),
   ]);
 
   /**
